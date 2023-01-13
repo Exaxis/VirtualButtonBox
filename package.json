@@ -1,10 +1,11 @@
 {
   "name": "angular-electron-boilerplate",
   "version": "0.0.0",
+  "main": "./dist/main/electron-main.js",
   "scripts": {
     "start": "electron .",
-    "build:dev:renderer": "ng build",
-    "build:prod:renderer": "ng build --prod",
+    "build:dev:renderer": "ng build --base-href ./",
+    "build:prod:renderer": "ng build --prod --base-href ./",
     "build:dev:main": "webpack --config ./src/main/webpack.ts --mode development",
     "build:prod:main": "webpack --config ./src/main/webpack.ts --mode production"
   },

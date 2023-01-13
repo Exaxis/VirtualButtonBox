@@ -29,9 +29,10 @@ function createWindow() {
   });
 
   // https://stackoverflow.com/a/58548866/600559
-  Menu.setApplicationMenu(null);
+  //Menu.setApplicationMenu(null);
 
   win.loadFile(path.join(app.getAppPath(), 'dist/renderer', 'index.html'));
+
 
   win.on('closed', () => {
     win = null;
