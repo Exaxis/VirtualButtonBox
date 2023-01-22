@@ -4,12 +4,12 @@ module.exports = (env: string) => {
   if (!env) { env = 'development'; }
   return {
     entry: {
-      main: './src/main/main.ts'
+      main: './src/preload/preload.ts'
     },
-    target: 'electron-main',
+    target: 'electron-preload',
     output: {
-      path: path.resolve(__dirname, '../../dist/main'),
-      filename: 'electron-main.js'
+      path: path.resolve(__dirname, '../../dist/preload'),
+      filename: 'preload.js'
     },
     externals: [ ],
     devtool: 'source-map',

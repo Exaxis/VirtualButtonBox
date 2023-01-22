@@ -1,0 +1,12 @@
+// Only exists to expose certain global types
+{
+	"compilerOptions": {
+		"rootDir": ".",
+
+		"typeRoots": [
+			"node_modules/@types",
+			"@types"
+		],
+	},
+
+}

@@ -1,13 +1,17 @@
 {
-  "name": "angular-electron-boilerplate",
+  "name": "virtual-button-box",
   "version": "0.0.0",
   "main": "./dist/main/electron-main.js",
   "scripts": {
     "start": "electron .",
-    "build:dev:renderer": "ng build --base-href ./",
-    "build:prod:renderer": "ng build --prod --base-href ./",
-    "build:dev:main": "webpack --config ./src/main/webpack.ts --mode development",
-    "build:prod:main": "webpack --config ./src/main/webpack.ts --mode production"
+    "build-renderer:dev": "ng build --base-href ./",
+    "build-renderer:prod": "ng build --prod --base-href ./",
+    "build-main:dev": "tsc --project ./src/main",
+    "build-main:prod": "webpack --config ./src/main/webpack.ts --mode production",
+    "build-preload:dev": "webpack --config ./src/preload/webpack.ts --mode development",
+    "build-preload:prod": "webpack --config ./src/preload/webpack.ts --mode production",
+    "build-all:dev": "npm run build-preload:dev && build-main:dev && build-renderer:dev",
+    "build-all:prod": "npm run build-preload:prod && build-main:prod && build-renderer:prod"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +25,7 @@
     "@angular/router": "^14.2.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
+    "vigemclient": "^1.5.2",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {

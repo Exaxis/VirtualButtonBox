@@ -1,10 +1,7 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+export {}
 
-import { AppComponent } from './app.component';
-
-declare global {
-  interface Window {
+declare global{
+interface Window {
     api: {
       /** Electron ipcRenderer wrapper of send method */
       electronIpcSend: (channel: string, ...arg: any) => void;
@@ -21,15 +18,3 @@ declare global {
     }
   }
 }
-
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
