@@ -10,8 +10,7 @@
     "build-main:prod": "webpack --config ./src/main/webpack.ts --mode production",
     "build-preload:dev": "webpack --config ./src/preload/webpack.ts --mode development",
     "build-preload:prod": "webpack --config ./src/preload/webpack.ts --mode production",
-    "build-all:dev": "npm run build-preload:dev && build-main:dev && build-renderer:dev",
-    "build-all:prod": "npm run build-preload:prod && build-main:prod && build-renderer:prod"
+    "build-all:dev": "npm run build-main:dev && npm run build-preload:dev && npm run build-renderer:dev"
   },
   "private": true,
   "dependencies": {
